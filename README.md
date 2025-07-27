@@ -31,7 +31,7 @@ This project implements a data pipeline for a Human Resources (HR) data warehous
 
 The data warehouse uses a star schema:
 
-![image2](image2)
+<img width="1416" height="797" alt="Image" src="https://github.com/user-attachments/assets/888735ff-bd1a-41aa-8250-13dbd125216a" />
 
 ### **Fact Table**
 - **Rate_Fact**: Contains measures related to employee pay rates, department, and shift.
@@ -47,7 +47,7 @@ Refer to the [Production Envrionment.sql](Production%20Envrionment.sql) file for
 
 The tables in the data warehouse are populated from the following OLTP tables:
 
-![image3](image3)
+<img width="1410" height="785" alt="Image" src="https://github.com/user-attachments/assets/acb36dcb-fc3d-44df-8b83-915dd449911b" />
 
 ---
 
@@ -55,11 +55,11 @@ The tables in the data warehouse are populated from the following OLTP tables:
 
 The ETL process is orchestrated via Apache NiFi:
 
-![image1](image1)
+<img width="1917" height="910" alt="Image" src="https://github.com/user-attachments/assets/34ce6b5a-8fce-48bf-9ec8-c65e617c1ea0" />
+<img width="1918" height="907" alt="Image" src="https://github.com/user-attachments/assets/18733376-d0b3-47d3-9c43-5dd46599002e" />
 
 - **Extract**: NiFi processors run queries to pull data from AdventureWorks2022.
 - **Load**: NiFi writes the extracted data directly into the OLAP tables in HumanResources_DWH.
-- **Note**: No transformation is performed in Spark or NiFi; data is loaded as-is from source to target tables.
 
 Each dimension and fact table has a dedicated flow group in NiFi, ensuring modular design and easy maintenance.
 
@@ -73,7 +73,6 @@ Data validation is performed using PySpark scripts (`Validations.py`):
 - Verifies row counts and latest modified dates are identical between source and target.
 - Logs all steps and issues in `logs.txt`.
 
-**No data transformation or movement is performed using Spark—only validation.**
 
 Sample validation logic:
 ```python
@@ -108,7 +107,7 @@ assert df_1_last_date == df_2_last_date
 
 4. **Run Validations**
    - Execute `Validations.py` to validate the ETL process.
-   - Review `logs.txt` for results and any warnings/errors.
+   - Review `logs.txt` for results and any warnings/errors.R
 
 ---
 
@@ -121,33 +120,17 @@ assert df_1_last_date == df_2_last_date
 ├── Shift_Diemension.json         # NiFi flow for Shift dimension
 ├── Production Envrionment.sql    # DDL & example queries for the production environment
 ├── Test Environment.sql          # Useful queries for testing and exploration
-├── Validations.py                # PySpark script for ETL validation (no transformation)
+├── Validations.py                # PySpark script for ETL validation
 ├── logs.txt                      # Output log file for validation results
 ```
 
 ---
 
-## Screenshots
-
-**NiFi Workflow Overview**
-> ETL orchestration for Dimensions and Fact Table
-![image1](image1)
-
-**Star Schema Diagram**
-> Logical data warehouse schema (Employee, Department, Shift, Rate Fact)
-![image2](image2)
-
-**Source Table Relationships**
-> OLTP schema showing how source tables relate
-![image3](image3)
-
----
 
 ## Credits
 
-- **ETL Architect/Developer**: [Your Name]
 - **Source Database**: AdventureWorks2022 (Microsoft sample DB)
-- **Tools Used**: Apache NiFi, PySpark (validation only), SQL Server
+- **Tools Used**: Apache NiFi, PySpark (validation), SQL Server 
 
 ---
 
