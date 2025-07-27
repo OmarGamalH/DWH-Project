@@ -12,7 +12,6 @@ This project implements a data pipeline for a Human Resources (HR) data warehous
 - [Validation Process](#validation-process)
 - [Usage](#usage)
 - [File Structure](#file-structure)
-- [Screenshots](#screenshots)
 - [Credits](#credits)
 
 ---
