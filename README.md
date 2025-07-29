@@ -201,11 +201,6 @@ See `logs.txt` for exact process tracking.
 
 ---
 
-## Authors & Credits
-
-- **Lead Developer:** OmarGHamed
-
----
 
 ## License
 
