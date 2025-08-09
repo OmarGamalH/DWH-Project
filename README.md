@@ -33,8 +33,6 @@ The Medallion Architecture divides the data warehouse into three layers:
 
 This layered approach ensures scalable, maintainable, and high-quality analytics.
 
-![DWH Medallion Architecture](./Nifi%20Workflow/DWH%20medallion%20Architecture/Nifi%20Workflow.png) <!-- Example, replace if needed -->
-
 ---
 
 ## Project Structure
@@ -105,30 +103,17 @@ Data quality results are stored in a dedicated schema (`data_quality`) for audit
 
 ## NiFi Workflows
 
-Apache NiFi is used for orchestrating data flows between layers and environments. All critical ingestion and transformation steps are visually managed for transparency and reliability.
+- **Apache NiFi** is used for orchestrating data flows between layers and environments. All critical ingestion and transformation steps are visually managed for transparency and reliability.
 
-### Example NiFi Flow
-
-#### Ingestion to Bronze Layer
-![NiFi Bronze Layer Ingestion](image2)
-
-#### Fact Table (Gold Layer)
-![NiFi Fact Table Workflow](image1)
-
-#### Employee Dimension Workflow
-![NiFi Employee Dimension Workflow](image3)
-
-#### Dimensions & Fact Table Overview
-![NiFi Dimensions and Fact Table](image4)
-
-Workflows are described in `.json` files and visualized in PNG images for quick reference.
+- Workflows are described in `.json` files and visualized in PNG images for quick reference.
 
 ---
 
 ## Schema Design
 
-- **Star Schema** for analytics (see `Schema/DWH Schema (Star Schema).png`)
-- **OLTP Schema** for source system reference (see `Schema/OLTP Schema.png`)
+- **Star Schema** for analytics
+  
+- **OLTP Schema** for source system reference 
 - SQL files define all necessary tables for Bronze, Silver, and Gold layers, as well as traditional DWH.
 
 ---
@@ -169,19 +154,16 @@ Workflows are described in `.json` files and visualized in PNG images for quick 
 Visual workflow and schema diagrams are provided to guide setup and illustrate architecture.
 
 - **NiFi Fact Table Workflow**  
-  ![NiFi Fact Table Workflow](image1)
+<img width="1918" height="846" alt="Image" src="https://github.com/user-attachments/assets/800f45cc-ca6c-4a51-a7d2-f27e030a29b7" />
 
 - **Bronze Layer Ingestion**  
-  ![Bronze Layer Ingestion](image2)
+<img width="842" height="732" alt="Image" src="https://github.com/user-attachments/assets/2282616d-318d-4689-b652-c2ceae6daf13" />
 
-- **Employee Dimension Workflow**  
-  ![Employee Dimension Workflow](image3)
-
-- **Medallion DWH Overview**  
-  ![Dimensions and Fact Table](image4)
-
+- **OLTP Schema**
+<img width="1410" height="785" alt="Image" src="https://github.com/user-attachments/assets/908495cf-5f5d-4575-a7b6-4a8d29ed82d2" />
+ 
 - **Star Schema**  
-  ![Star Schema](./Schema/DWH%20Schema%20(Star%20Schema).png)
+<img width="1416" height="797" alt="Image" src="https://github.com/user-attachments/assets/f533104e-9a85-4f69-8100-ff91b2b7fa39" />
 
 ---
 
