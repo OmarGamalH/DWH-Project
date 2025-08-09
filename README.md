@@ -175,7 +175,7 @@ See [LICENSE](LICENSE) for details.
 
 ## Author & Credits
 
-Developed by Omar Gamal Hamed.  
+Developed by @OmarGamalH.  
 For questions, suggestions, or contributions, please open an issue or submit a pull request.
 
 ---
