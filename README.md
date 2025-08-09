@@ -94,7 +94,7 @@ This layered approach ensures scalable, maintainable, and high-quality analytics
 
 ## ETL & Data Quality
 
-- **ETL_pipeline.py**: Orchestrates extraction, transformation, and loading of Employee, Department, and Shift data.
+- **ETL_pipeline.py**: Orchestrates extraction, transformation, and loading of Employee, Department, and Shift data from Bronze layer to Silver layer.
 - **Utilities.py**: Contains reusable Spark/PySpark functions for connecting, loading, and transforming table data.
 - **quality_checks.py**: Runs automated column-level data quality checks (completeness, uniqueness, validity) and logs results.
 - **Validations.py**: Validates source and destination tables for schema and data consistency.
